@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React ,{useState, useEffect} from 'react';
+import Itemlist from './components/Itemlist';
+import Navbar from './components/Navbar';
 
-function App() {
+// import ImagenMove from './components/ImagenMove';
+
+const App = () => {
+
+
+  const [comprasUario, setComprasUario] = React.useState(0);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {/* <ImagenMove /> */}
+      <Navbar compra={comprasUario}/>
+
+      <Itemlist itemcompra={setComprasUario} />
+    </>
   );
-}
+};
 
 export default App;
